@@ -1,0 +1,117 @@
+
+@mainColor:#006699;
+
+/* 样式初始化文件 */
+
+* {
+    margin: 0px;
+    padding: 0px;
+    /* 移动端一般会设置盒模型为border-box 防止边框和padding撑大盒子超出屏幕宽度出现滚动条 */
+    box-sizing: border-box;
+    /*移动端a标签按住的高亮背景色 设置透明即可*/
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+
+li {
+    list-style: none;
+}
+
+
+input {
+    /* 去除输入框的内外边框 */
+    border: 0;
+    outline: 0;
+}
+
+
+img {
+    /* 去掉图片的边框 */
+    border: none;
+    /* 去掉图片底部3px的间距 */
+    vertical-align: middle;
+}
+
+
+a {
+    color: #666;
+    text-decoration: none;
+}
+
+html,body{
+    height: 100%;
+}
+
+body{
+    padding: 45px 0;
+}
+// 头部的公共样式
+#header{
+    width: 100%;
+    height: 45px;
+    background-color: @mainColor;
+    position: fixed;
+    top: 0;
+    display: flex;
+    z-index: 2;
+    
+    >h4{
+        flex:1;
+        height: 100%;
+        line-height: 45px;
+        text-align: center;
+        color: #fff;
+        margin: 0;
+        font-weight: normal;
+    }
+    >a{
+        width: 45px;
+        height: 45px;
+        &.fa-search{
+            font-size: 24px;
+            font-weight: normal;
+            line-height: 45px;
+            text-align: center;
+            color: #fff;
+        }
+    }
+}
+
+//主体部分
+#main{
+    height: 100%;
+    position: relative;
+    background-color: #fff;
+}
+
+//底部区域
+#footer {
+    position: fixed;
+    bottom: 0;
+    background-color: @mainColor;
+    width: 100%;
+    height: 45px;
+    z-index: 2;
+    .mui-row {
+        >div {
+            a {
+                color: #fff;
+                font-size: 16px;
+                text-align: center;
+                i {
+                    display: block;
+                    padding-top: 6px;
+                }
+                span {
+                    display: block;
+                    font-size: 14px;
+                }
+            }
+            &:first-of-type {
+                a {
+                    color: orange;
+                }
+            }
+        }
+    }
+}

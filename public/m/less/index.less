@@ -1,0 +1,112 @@
+// 引入公共样式文件
+@import 'base.less';
+// 导航区域
+#nav {
+    padding: 10px;
+    .mui-row {
+        a {
+            display: block;
+            >img {
+                width: 100%;
+            }
+        }
+    }
+}
+
+//广告区域
+#banner {
+    padding: 0 10px;
+    .left {
+        >a {
+            display: block;
+            >img {
+                float: left;
+                width: 50%;
+            }
+        }
+    }
+    .right {
+        >a {
+            >img {
+                width: 100%;
+            }
+        }
+    }
+}
+
+//品牌专区
+#brand {
+    padding: 10px;
+    .title {
+        a {
+            display: block;
+            img {
+                width: 100%;
+            }
+        }
+    }
+    .content {
+        a {
+            display: block;
+            width: 100%;
+            >img {
+                width: 100%;
+            }
+        }
+    }
+}
+
+//运动专区
+#sport,
+#man,
+#women {
+    .title {
+        padding: 10px;
+        a {
+            display: block;
+            img {
+                width: 100%;
+            }
+        }
+    }
+    .content {
+        .mui-row {
+            >div {
+                /* 给栅格添加了左右的padding */
+                padding: 0 5px;
+                /* 选中第3个以后的div里面的商品添加上间距 */
+                &:nth-of-type(n+3) {
+                    .product {
+                        margin-top: 10px;
+                    }
+                }
+                .product {
+                    /* 商品盒子就会变小 中间会有间距 */
+                    text-align: center;
+                    box-shadow: 0px 0px 1px #ccc;
+                    padding-bottom: 10px;
+                    .product-img {
+                        img {
+                            width: 100%;
+                        }
+                    }
+                    .product-name {}
+                    .product-price {
+                        font-size: 12px;
+                        span {
+                            color: red;
+                        }
+                        del {
+                            color: #ccc;
+                        }
+                    }
+                    .product-buy {
+                        background-color: @mainColor;
+                        border-color: @mainColor;
+                    }
+                }
+            }
+        }
+    }
+}
+
