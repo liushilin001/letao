@@ -52,12 +52,9 @@ body{
     background-color: @mainColor;
     position: fixed;
     top: 0;
-    display: flex;
     z-index: 2;
-    
+    padding: 0 45px;
     >h4{
-        flex:1;
-        height: 100%;
         line-height: 45px;
         text-align: center;
         color: #fff;
@@ -67,12 +64,28 @@ body{
     >a{
         width: 45px;
         height: 45px;
+        text-align: center;
+        line-height: 45px;
+        position: absolute;
+        color: #fff;
+        top: 0; 
         &.fa-search{
             font-size: 24px;
-            font-weight: normal;
-            line-height: 45px;
-            text-align: center;
-            color: #fff;
+            right: 0;
+        }
+        &.fa-arrow-left{
+            font-size: 24px;
+            left: 0;
+        }
+    }
+    form{
+        padding-top: 5px;
+        input{
+            height: 35px;
+            background-color: #fff;
+            text-align: left;
+            font-size: 14px;
+            margin-bottom: 0;
         }
     }
 }

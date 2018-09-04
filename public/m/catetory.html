@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- 引入mui的css文件 -->
+    <link rel="stylesheet" href="./lib/mui/css/mui.css">
+    <!-- 引入字体图标的文件 -->
+    <link rel="stylesheet" href="./lib/fontAwesome/css/font-awesome.css">
+    <!-- 引入主页的less文件 -->
+    <link rel="stylesheet/less" href="./less/catetory.less">
+    <!-- 引入less的编译器文件 -->
+    <script src="./lib/less/less.js"></script>
+</head>
+
+<body>
+    <!-- 头部区域 -->
+    <header id="header">
+        <a href="#" class="fa fa-arrow-left"></a>
+        <form action="#">
+            <input type="search" placeholder="请输入你需要搜索的商品">
+        </form>
+        <a href="#" class="fa fa-search"></a>
+    </header>
+    <!-- 主体区域 -->
+    <main id="main">
+        <div class="catetoryLeft">
+            <ul>
+                <!-- <li class="active"><a href="#">运动馆</a></li> -->
+
+            </ul>
+        </div>
+
+        <div class="catetoryRight">
+
+            <div class="mui-scroll-wrapper">
+                <div class="mui-scroll">
+                    <!--这里放置真实显示的DOM内容-->
+                    <div class="mui-row">
+
+                        <!-- <div class="mui-col-xs-4">
+                            <a href="#">
+                                <img src="/mobile/images/brand1.png" alt="">
+                                <span>耐克</span>
+                            </a>
+                        </div> -->
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+    <!-- 底部区域 -->
+    <footer id="footer">
+        <div class="mui-row">
+            <div class="mui-col-xs-3">
+                <a href="index.html">
+                    <i class="fa fa-home now"></i>
+                    <span>首页</span>
+                </a>
+            </div>
+            <div class="mui-col-xs-3">
+                <a href="catetory.html">
+                    <i class="fa fa-bars"></i>
+                    <span>分类</span>
+                </a>
+            </div>
+            <div class="mui-col-xs-3">
+                <a href="#">
+                    <i class="fa fa-shopping-cart"></i>
+                    <span>购物车</span>
+                </a>
+            </div>
+            <div class="mui-col-xs-3">
+                <a href="#">
+                    <i class="fa fa-user"></i>
+                    <span>个人中心</span>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 左侧分类模板 -->
+    <script id="catetoryTmp" type="text/html">
+
+        {{ each rows }}
+
+        <li class="{{$index == 0 ? 'active' : ''}}">
+            <a href="#" data-id="{{ $value.id }}">{{ $value.categoryName}}</a>
+        </li>
+
+        {{ /each}}
+
+    </script>
+
+    <!-- 右侧分类模板 -->
+    <script id="brandTmp" type="text/html">
+        <!-- 判断里面是否有数据 -->
+        {{ if rows.length > 0 }}
+
+        {{ each rows}}
+        <div class="mui-col-xs-4">
+             <a href="#">
+                 <img src="{{ $value.brandLogo}}" alt="">
+                 <span>{{ $value.brandName}}</span>
+             </a>
+        </div>
+        {{ /each }}
+
+        {{ else }}
+
+        <p>此处没有数据</p>
+
+        {{ /if }}
+
+    </script>
+
+    <!-- 引入mui的js文件 -->
+    <script src="./lib/mui/js/mui.js"></script>
+    <!-- 引入zepto的js文件 -->
+    <script src="./lib/zepto/zepto.min.js"></script>
+    <!-- 引入模板引擎的js文件 -->
+    <script src="./lib/artTemplate/template-web.js"></script>
+    <!-- 引入分页的js文件 -->
+    <script src="./js/catetory.js"></script>
+</body>
+
+</html>
