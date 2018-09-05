@@ -25,7 +25,34 @@
     </header>
     <!-- 主体区域 -->
     <main id="main">
-        
+        <div class="search-form">
+            <input type="search" class="input-search" placeholder="搜索你喜欢的商品">
+            <button type="button" class="mui-btn mui-btn-primary mui-btn-outlined btn-search">搜索</button>
+        </div>
+
+        <div class="history">
+
+            <div class="title">
+                <p class="search-history mui-pull-left">搜索历史</p>
+                <p class="mui-pull-right btn-clear">
+                    <a href="#">
+                        <i class="fa fa-trash"></i>
+                        <span>清空记录</span>
+                    </a>
+                </p>
+            </div>
+
+            <div class="content">
+                <ul>
+                    <!-- <li>
+                        <a href="#">耐克</a>
+                        <i class="fa fa-close"></i>
+                    </li> -->
+
+                </ul>
+            </div>
+
+        </div>
 
     </main>
     <!-- 底部区域 -->
@@ -58,7 +85,19 @@
         </div>
     </footer>
 
-
+    <!-- 历史记录模板 -->
+    <script id="historyTmp" type="text/html">
+    {{ if rows.length > 0}}
+        {{ each rows }}
+            <li>
+                <a href="#">{{ $value.search }}</a>
+                <i class="fa fa-close btn-del" data-id="{{ $value.id }}"></i>
+            </li>
+        {{ /each }}
+    {{ else }}
+            <li><p>没有数据</p></li>
+        {{ /if }}
+    </script>
 
     <!-- 引入mui的js文件 -->
     <script src="./lib/mui/js/mui.js"></script>
